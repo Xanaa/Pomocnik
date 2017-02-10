@@ -1,0 +1,4 @@
+﻿Lista funkcji:
+Obsluga_czasu:
+	-bool Uspij(int sekundy)	// Uśpienie programu na x sekund
+	-string Podaj_czas()		// Zwraca obecny czas - godzina:minuta:sekunda
