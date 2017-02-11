@@ -1,4 +1,8 @@
-﻿0.1.0.0 (10.02.2017r.)
+﻿0.2.0.0 (11.02.201r.)
 -Dodanie funkcji:
-a.Obsluga_czasu->Uspij
-b.Obsluga_czasu->daj_czas
+	a. Obsluga_sieci->Wyszukaj_na_stronie
+
+0.1.0.0 (10.02.2017r.)
+-Dodanie funkcji:
+	a. Obsluga_czasu->Uspij
+	b. Obsluga_czasu->Podaj_czas

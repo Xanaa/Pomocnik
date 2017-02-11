@@ -1,4 +1,8 @@
-﻿Lista funkcji:
+﻿### Lista funkcji:
+
 Obsluga_czasu:
-	-bool Uspij(int sekundy)	// Uśpienie programu na x sekund
-	-string Podaj_czas()		// Zwraca obecny czas - godzina:minuta:sekunda
+	- bool Uspij(int sekundy)	// Uśpienie programu na x sekund
+	- string Podaj_czas()		// Zwraca obecny czas - godzina:minuta:sekunda
+
+Obsluga_sieci:
+	- string Wyszukaj_na_stronie(string strona, string szukane1, string szukane2)	// Wyszukaj linie, która zawiera "szukane1" pod adresem "strona" i usuń z tej linii "szukane1" i "szukane2"
