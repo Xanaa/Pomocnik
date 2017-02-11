@@ -1,4 +1,10 @@
-﻿0.2.0.0 (11.02.201r.)
+﻿1.0.0.0 (11.02.2017)
+-Dodanie funkcji:
+	a. Obsluga_plikow->Wczytaj_plik_tekstowy
+	b. Obsluga_plikow->Sprawdz_komentarze
+	c. Obsluga_plikow->Podziel_na_kolumny
+
+0.2.0.0 (11.02.2017r.)
 -Dodanie funkcji:
 	a. Obsluga_sieci->Wyszukaj_na_stronie
 

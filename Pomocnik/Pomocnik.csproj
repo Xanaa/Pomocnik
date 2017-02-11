@@ -41,12 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Obsluga_czasu.cs" />
+    <Compile Include="Obsluga_plikow.cs" />
     <Compile Include="Obsluga_sieci.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lista Funkcji.txt">
