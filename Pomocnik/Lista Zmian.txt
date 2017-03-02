@@ -1,4 +1,8 @@
-﻿1.0.0.0 (11.02.2017)
+﻿1.1.0.0 (02.03.2017)
+-Dodanie funkcji:
+	a. Obsluga_czasu->Podaj_date_i_czas
+
+1.0.0.0 (11.02.2017)
 -Dodanie funkcji:
 	a. Obsluga_plikow->Wczytaj_plik_tekstowy
 	b. Obsluga_plikow->Sprawdz_komentarze

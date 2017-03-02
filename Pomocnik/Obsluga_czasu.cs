@@ -17,5 +17,11 @@ namespace Pomocnik
         {
             return DateTime.Now.ToString("HH:mm:ss");
         }
+
+        // Zwraca obecny czas - rokmiesiącdzień_godzinaminutasekunda
+        public static string Podaj_date_i_czas()
+        {
+            return DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        }
     }
 }
