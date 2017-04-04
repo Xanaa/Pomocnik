@@ -12,16 +12,23 @@ namespace Pomocnik
             return true;
         }
 
-        // Zwraca obecny czas - godzina:minuta:sekunda
-        public static string Podaj_czas()
+        // Zwraca obecny czas
+        public static string Podaj_date_i_czas(int tryb, string odd1, string odd2, string odd3, string odd4, string odd5)
         {
-            return DateTime.Now.ToString("HH:mm:ss");
-        }
-
-        // Zwraca obecny czas - rokmiesiącdzień_godzinaminutasekunda
-        public static string Podaj_date_i_czas()
-        {
-            return DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            string do_wyslania = "";
+            switch (tryb)
+            {
+                case 0:
+                    do_wyslania = DateTime.Now.ToString("yyyy"+ odd1 + "MM" + odd2 + "dd" + odd3 + "HH" + odd4 + "mm" + odd5 + "ss");
+                    break;
+                case 1:
+                    do_wyslania = DateTime.Now.ToString("yyyy" + odd1 + "MM" + odd2 + "dd");
+                    break;
+                case 2:
+                    do_wyslania = DateTime.Now.ToString("HH" + odd1 + "mm" + odd2 + "ss");
+                    break;
+            }
+            return do_wyslania;
         }
     }
 }

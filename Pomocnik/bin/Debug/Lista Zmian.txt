@@ -1,18 +1,21 @@
-﻿1.1.0.0 (02.03.2017)
--Dodanie funkcji:
-	a. Obsluga_czasu->Podaj_date_i_czas
+﻿1.2.0.0 (04.04.2017r.)
+-Złączenie funkcji "Podaj_date_i_czas" i "Podaj_czas"
 
-1.0.0.0 (11.02.2017)
+1.1.0.0 (02.03.2017r.)
 -Dodanie funkcji:
-	a. Obsluga_plikow->Wczytaj_plik_tekstowy
-	b. Obsluga_plikow->Sprawdz_komentarze
-	c. Obsluga_plikow->Podziel_na_kolumny
+	a. Obsluga_czasu->Podaj_date_i_czas,
+
+1.0.0.0 (11.02.2017r.)
+-Dodanie funkcji:
+	a. Obsluga_plikow->Wczytaj_plik_tekstowy,
+	b. Obsluga_plikow->Sprawdz_komentarze,
+	c. Obsluga_plikow->Podziel_na_kolumny,
 
 0.2.0.0 (11.02.2017r.)
 -Dodanie funkcji:
-	a. Obsluga_sieci->Wyszukaj_na_stronie
+	a. Obsluga_sieci->Wyszukaj_na_stronie,
 
 0.1.0.0 (10.02.2017r.)
 -Dodanie funkcji:
-	a. Obsluga_czasu->Uspij
-	b. Obsluga_czasu->Podaj_czas
+	a. Obsluga_czasu->Uspij,
+	b. Obsluga_czasu->Podaj_czas,
