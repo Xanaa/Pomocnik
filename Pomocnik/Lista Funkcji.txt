@@ -1,13 +1,16 @@
 ﻿### Lista funkcji:
-
 Obsluga_czasu:
-	- bool Uspij(int sekundy)	// Uśpienie programu na x sekund
-	- string Podaj_date_i_czas(int tryb, string odd1, string odd2, string odd3, string odd4, string odd5)  // Zwraca obecny czas, tryby: 0-YYYYMMDDGGmmSS, 1-YYYYMMDD, 2-GGmmSS
+	- bool Uspij(...)									// Uśpienie programu na x sekund
+	- string Podaj_date_i_czas(...)						// Zwraca obecny czas, tryby: 0-YYYYMMDDGGmmSS, 1-YYYYMMDD, 2-GGmmSS
 
 Obsluga_sieci:
-	- string Wyszukaj_na_stronie(string strona, string szukane1, string szukane2)	// Wyszukaj linie, która zawiera "szukane1" pod adresem "strona" i usuń z tej linii "szukane1" i "szukane2"
+	- string Wyszukaj_na_stronie(...)					// Wyszukaj linie pod danym adresem i usuń podany tekst na początku i na końcu
+	- bool Sprawdz_polaczenie_z_internetem()			// Sprawdź czy można połączyć z internetem
 
 Obsluga_plikow:
-	-string[,] Wczytaj_plik_tekstowy(string sciezka, string plik, int ile_kolumn, string Komentarz_pomijany, string separator)	// Wczytaj plik (jest w postaci "cały plik" ==> "oddzielne linie"), tablica 2d
-	-string[] Sprawdz_komentarze(string[] plik, string komentarz)		// Usuń komentarze (zaczyna się od "komentarz")
-	-string[,] Podziel_na_kolumny(string[] plik, int liczba_kolumn)		// Podziel tablicę 1d na 2d przez ","
+	- string[,] Wczytaj_plik_tekstowy(...)										// Wczytaj plik (w postaci "cały plik" ==> "oddzielne linie"), tablica 2d
+	- string[] Sprawdz_komentarze(...)					// Usuń komentarze (zaczyna się od "komentarz")
+	- string[,] Podziel_na_kolumny(...)					// Podziel tablicę 1d na 2d przez ","
+
+Obsluga_tekstu:
+	- string Znajdz_i_zamien(...)						// Znajdz i zamień szukany tekst na inny

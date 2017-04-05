@@ -46,7 +46,6 @@ namespace Pomocnik
                     nowe_linie++;
                 }
             }
-
             return zastepczy;
         }
 
@@ -54,9 +53,7 @@ namespace Pomocnik
         public static string[,] Podziel_na_kolumny(string[] plik, int liczba_kolumn, string Znak_separujacy)
         {
             string[,] podzielony_plik = new string[plik.Length, liczba_kolumn];
-
             char sep_temp = Znak_separujacy.ToCharArray()[0];
-
             int temp = 0;
 
             foreach (string wiersz in plik)
@@ -68,7 +65,6 @@ namespace Pomocnik
                 }
                 temp++;
             }
-
             return podzielony_plik;
         }
     }

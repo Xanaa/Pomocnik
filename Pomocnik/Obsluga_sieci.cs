@@ -9,7 +9,6 @@ namespace Pomocnik
         {
             string pobrana_strona = new WebClient().DownloadString(strona);
             string do_wyswietlenia = "Brak szukanej zawartości na stronie!";
-
             string[] przerobiona_strona = pobrana_strona.Split('\n');
 
             foreach (string linia in przerobiona_strona)
@@ -22,6 +21,25 @@ namespace Pomocnik
                 }
             }
             return do_wyswietlenia;
+        }
+
+        // Sprawdź czy można połączyć z internetem
+        public static bool Sprawdz_polaczenie_z_internetem()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                {
+                    using (var stream = client.OpenRead("http://www.google.com"))
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

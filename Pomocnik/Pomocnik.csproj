@@ -43,6 +43,7 @@
     <Compile Include="Obsluga_czasu.cs" />
     <Compile Include="Obsluga_plikow.cs" />
     <Compile Include="Obsluga_sieci.cs" />
+    <Compile Include="Obsluga_tekstu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
