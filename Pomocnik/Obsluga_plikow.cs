@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Pomocnik
 {
@@ -66,6 +67,45 @@ namespace Pomocnik
                 temp++;
             }
             return podzielony_plik;
+        }
+
+        // Wczytaj wszystkie pliki w folderze jako tablica 1d
+        public static string[] Wczytaj_wszystkie_pliki(string sciezka0)
+        {
+            string[] lista = Podaj_liste_plikow_ze_sciezka(sciezka0);
+            string[] Wczytane_pliki = new string[Podaj_dlugosc_plikow_w_folderze(lista) + (2* lista.GetLength(0))];
+            int a = 0;
+            foreach(string linia in lista)
+            {
+                string[] temp1 = File.ReadAllLines(linia);
+                Wczytane_pliki[a] = Obsluga_tekstu.Znajdz_i_zamien(linia,sciezka0 + "\\","");
+                a++;
+                for(int x = 0; x < temp1.GetLength(0); x++)
+                {
+                    Wczytane_pliki[a] = temp1[x];
+                    a++;
+                }
+                a++;
+            }
+            return Wczytane_pliki;
+        }
+
+        // Lista plików w folderze, razem ze sciezką
+        public static string[] Podaj_liste_plikow_ze_sciezka(string sciezka)
+        {
+            return Directory.GetFiles(sciezka);
+        }
+
+        // Podaj ile maja wszystkie pliki razem
+        private static int Podaj_dlugosc_plikow_w_folderze(string[] lista_plikow0)
+        {
+            int dlugosc = 0;
+            foreach(string linka in lista_plikow0)
+            {
+                string[] temp1 = File.ReadAllLines(linka);
+                dlugosc += temp1.GetLength(0);
+            }
+            return dlugosc;
         }
     }
 }

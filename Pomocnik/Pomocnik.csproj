@@ -48,9 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Lista Funkcji.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Lista Zmian.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

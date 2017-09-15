@@ -3,7 +3,6 @@ D:\Repozytorium\Pomocnik\Pomocnik\bin\Debug\Pomocnik.pdb
 D:\Repozytorium\Pomocnik\Pomocnik\obj\Debug\Pomocnik.dll
 D:\Repozytorium\Pomocnik\Pomocnik\obj\Debug\Pomocnik.pdb
 D:\Repozytorium\Pomocnik\Pomocnik\obj\Debug\Pomocnik.csprojResolveAssemblyReference.cache
-D:\Repozytorium\Pomocnik\Pomocnik\bin\Debug\Lista Funkcji.txt
 D:\Repozytorium\Pomocnik\Pomocnik\bin\Debug\Lista Zmian.txt
 D:\Repozytorium\Pomocnik\Pomocnik\bin\Debug\System.Net.Http.dll
 D:\Repozytorium\Pomocnik\Pomocnik\bin\Debug\System.Net.Http.xml
