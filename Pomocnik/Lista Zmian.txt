@@ -1,4 +1,8 @@
-﻿1.3.1.0 (15.09.2017r.)
+﻿1.3.2.0 (16.09.2017r.)
+-Dodano funkcje:
+	a.Obsluga_czasu->Podaj_date_rozdzielnie
+
+1.3.1.0 (15.09.2017r.)
 -Dodano funkcje:
 	a.Obsluga_plikow->Wczytaj_wszystkie_pliki
 	b.Obsluga_plikow->Podaj_liste_plikow_ze_sciezka

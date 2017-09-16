@@ -107,5 +107,7 @@ namespace Pomocnik
             }
             return dlugosc;
         }
+
+        //public static string Podaj_wynik_frazy
     }
 }
