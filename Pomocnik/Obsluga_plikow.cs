@@ -108,6 +108,106 @@ namespace Pomocnik
             return dlugosc;
         }
 
-        //public static string Podaj_wynik_frazy
+        // Przeszukanie zakresu
+        public static string[] Wycinanie_tekstu_z_tekstu(string[] caly_plik, int pierwsza_linia, int ostatnia_linia)
+        {
+            int dlugosc = ostatnia_linia - pierwsza_linia;
+            string[] wycinek = new string[dlugosc];
+            int linia_wycinka = 0;
+
+            for(int a = pierwsza_linia; a < ostatnia_linia; a++)
+            {
+                wycinek[linia_wycinka] = caly_plik[a];
+                linia_wycinka++;
+            }
+            
+            return wycinek;
+        }
+
+        public static string[] Przytnij_obszar_wyszukiwania (string[] tekst_caly, string szukana_fraza)
+        {
+            int poziom_nawiasu = 0;
+            int poczatek = 0;
+            int koniec = 1;
+            for(int a = 0; a < tekst_caly.GetLength(0); a++)
+            {
+                if (tekst_caly[a] != null)
+                {
+                    if (tekst_caly[a].Contains("{"))
+                    {
+                        if (tekst_caly[a].Contains(szukana_fraza + " = {") && poziom_nawiasu == 0)
+                        {
+                            poczatek = a;
+                        }
+                        poziom_nawiasu++;
+                    }
+                    if (tekst_caly[a].Contains("}"))
+                    {
+                        poziom_nawiasu--;
+                        if (poziom_nawiasu == 0 && poczatek != 0)
+                        {
+                            koniec = a +1;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return Wycinanie_tekstu_z_tekstu(tekst_caly, poczatek, koniec);
+        }
+
+
+        public static int Podaj_liczbe_elementow_tagu (string[] tekst, int poziom_nawiasu)
+        {
+            int poziom_nawiasow = poziom_nawiasu;
+            int liczba_elementow = 0;
+            foreach(string linia in tekst)
+            {
+                if(linia != null)
+                {
+                    if (linia.Contains("{"))
+                    {
+                        if (poziom_nawiasow == poziom_nawiasu)
+                        {
+                            liczba_elementow++;
+                        }
+                        poziom_nawiasow++;
+                    }
+                    if (linia.Contains("}"))
+                    {
+                        poziom_nawiasow--;
+                    }
+                }               
+            }
+            return liczba_elementow;
+        }
+
+        public static string[] Podaj_liste_tagow(string[] tekst)
+        {
+            string[] tagi = new string[Podaj_liczbe_elementow_tagu(tekst,0)];
+            int poziom_nawiasow = 0;
+            int liczba = 0;
+
+            foreach (string linia in tekst)
+            {
+                if(linia != null)
+                {
+                    if (linia.Contains("{"))
+                    {
+                        if (poziom_nawiasow == 0)
+                        {
+                            tagi[liczba] = Obsluga_tekstu.Znajdz_i_zamien(linia, " = {", "");
+                            liczba++;
+                        }
+                        poziom_nawiasow++;
+                    }
+                    if (linia.Contains("}"))
+                    {
+                        poziom_nawiasow--;
+                    }
+                }          
+            }
+            return tagi;
+        }
     }
 }
