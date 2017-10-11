@@ -124,7 +124,7 @@ namespace Pomocnik
             return wycinek;
         }
 
-        public static string[] Przytnij_obszar_wyszukiwania (string[] tekst_caly, string szukana_fraza)
+        public static string[] Przytnij_obszar_wyszukiwania (string[] tekst_caly, string szukana_fraza, int Poziom)
         {
             int poziom_nawiasu = 0;
             int poczatek = 0;
@@ -135,7 +135,7 @@ namespace Pomocnik
                 {
                     if (tekst_caly[a].Contains("{"))
                     {
-                        if (tekst_caly[a].Contains(szukana_fraza + " = {") && poziom_nawiasu == 0)
+                        if (tekst_caly[a].Contains(szukana_fraza + " = {") && poziom_nawiasu == Poziom)
                         {
                             poczatek = a;
                         }
@@ -144,7 +144,7 @@ namespace Pomocnik
                     if (tekst_caly[a].Contains("}"))
                     {
                         poziom_nawiasu--;
-                        if (poziom_nawiasu == 0 && poczatek != 0)
+                        if (poziom_nawiasu == Poziom && poczatek != 0)
                         {
                             koniec = a +1;
                             break;
@@ -155,7 +155,6 @@ namespace Pomocnik
 
             return Wycinanie_tekstu_z_tekstu(tekst_caly, poczatek, koniec);
         }
-
 
         public static int Podaj_liczbe_elementow_tagu (string[] tekst, int poziom_nawiasu)
         {
@@ -208,6 +207,25 @@ namespace Pomocnik
                 }          
             }
             return tagi;
+        }
+
+        public static string[] Wytnij_przedzial_z_podtagu(string[] Zakres1, string Parametr1,int poziom1, string Parametr2, int poziom2)
+        {
+            string[] Linie1 = Obsluga_plikow.Przytnij_obszar_wyszukiwania(Zakres1, Parametr1, poziom1);
+
+            return Obsluga_plikow.Przytnij_obszar_wyszukiwania(Linie1, Parametr2, poziom2);
+        }
+
+        public static string[,] Podaj_liste_z_zakresu(string[] Zakres)
+        {
+            int de = 0;
+            string[] zwrot = new string[Zakres.GetLength(0) - 2];
+            for (int i = 1; i < Zakres.GetLength(0) - 1; i++)
+            {
+                zwrot[de] = Obsluga_tekstu.Znajdz_i_zamien(Zakres[i], " = ", "=");
+                de++;
+            }
+            return Obsluga_plikow.Podziel_na_kolumny(zwrot, 2, "=");
         }
     }
 }
