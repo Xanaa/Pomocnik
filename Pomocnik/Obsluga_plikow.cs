@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace Pomocnik
 {
@@ -88,6 +89,12 @@ namespace Pomocnik
                 a++;
             }
             return Wczytane_pliki;
+        }
+
+        public static string[] Podziel_na_tablice_i_usun_duplikaty (string do_podzialu, string znak_separujacy1)
+        {
+            string[] Podzielone = do_podzialu.Split(znak_separujacy1.ToCharArray()[0]);
+            return Podzielone.Distinct().ToArray();
         }
 
         // Lista plików w folderze, razem ze sciezką
