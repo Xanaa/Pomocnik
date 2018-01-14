@@ -1,4 +1,13 @@
-﻿1.3.6.0 (12.12.2017r.)
+﻿1.4.0.0 (14.01.2018r.)
+-Dodano funkcje:
+	a. Obsluga_tekstu->Scal_tablice_2d_do_1d
+	b. Obsluga_tekstu->Podziel_tablice_1d_na_2d
+	c. Obsluga_tekstu->Czy_tablica_zawiera_liczbe
+	d. Obsluga_tekstu->Usun_wiersze_z_tablicy_2d
+-Zmieniono funkcje:
+	a. Obsluga_tekstu->Polacz_tablice_2d_i_usun_duplikaty
+
+1.3.6.0 (12.12.2017r.)
 -Dodano funkcje:
 	a.Obsluga_tekstu->Polacz_tablice_2d_i_usun_duplikaty
 
