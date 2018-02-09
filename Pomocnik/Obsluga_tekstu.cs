@@ -39,6 +39,29 @@ namespace Pomocnik
             return tablica_zwrotna;
         }
 
+        public static string[,] Polacz_tablice_2d(string[,] tablica01, string[,] tablica02, string Separator00)
+        {
+            string[] tablica_scalona1 = new string[tablica01.GetLength(0)];
+            string[] tablica_scalona2 = new string[tablica02.GetLength(0)];
+            string[] tablica_scalona3 = new string[(tablica01.GetLength(0) + tablica02.GetLength(0))];
+            int pomoc = 0;
+
+            tablica_scalona1 = Scal_tablice_2d_do_1d(tablica01, Separator00);
+            tablica_scalona2 = Scal_tablice_2d_do_1d(tablica02, Separator00);
+
+            for (int a = 0; a < tablica01.GetLength(0); a++)
+            {
+                tablica_scalona3[a] = tablica_scalona1[a];
+                pomoc++;
+            }
+            for (int a = pomoc; a < tablica02.GetLength(0) + pomoc; a++)
+            {
+                tablica_scalona3[a] = tablica_scalona2[a - pomoc];
+            }
+            string[,] tablica_zwrotna = Podziel_tablice_1d_na_2d(tablica_scalona3, Separator00);
+            return tablica_zwrotna;
+        }
+
         public static string[] Scal_tablice_2d_do_1d (string[,] tablica, string separator)
         {
             int ilosc_wierszy = tablica.GetLength(0);
@@ -130,5 +153,66 @@ namespace Pomocnik
             return Podziel_tablice_1d_na_2d(nowa_tablica, Separator5);
         }
 
+        public static string[,] Wyodrebnij_wiersz_z_tablicy_2d (string[,] tablica1, int id_wiersza)
+        {
+            string[,] zwrot = new string[1, tablica1.GetLength(1)];
+            for(int a = 0; a < tablica1.GetLength(0); a++)
+            {
+                if(a == id_wiersza)
+                {
+                    for (int b = 0; b < tablica1.GetLength(1); b++)
+                    {
+                        zwrot[0, b] = tablica1[a, b];
+                    }
+                    break;
+                }
+            }
+            return zwrot;
+        }
+
+        public static string[,] Scal_tablice_2d_i_nadpisz(string[,] tablica1, string[,] tablica2, string separator, int[] klucze_kolumny)
+        {
+            string[,] scalona = tablica1;
+            for(int a = 0; a < tablica2.GetLength(0); a++)
+            {
+                string[,] wiersz = Wyodrebnij_wiersz_z_tablicy_2d(tablica2,a);
+                scalona = Scal_wiersz_z_tablica_2d_i_nadpisz_1arg(tablica1, wiersz,",", klucze_kolumny);
+            }
+            return scalona;
+        }
+
+        public static string[,] Scal_wiersz_z_tablica_2d_i_nadpisz_1arg(string[,] tablica01, string[,] wiersz, string separator0, int[] klucze_kolumny0)
+        {
+            bool nadpisano = false;
+            bool[] tab_nadpis = new bool[klucze_kolumny0.GetLength(0)];
+            for(int a = 0; a < tablica01.GetLength(0); a++)
+            {
+                for(int b = 0; b < klucze_kolumny0.GetLength(0); b++)
+                {
+                    if(tablica01[a, klucze_kolumny0[b]] == wiersz[0, klucze_kolumny0[b]])
+                    {
+                        tab_nadpis[b] = true;
+                    }
+                }
+                if(tab_nadpis.All(x => x))
+                {
+                    for (int b = 0; b < tablica01.GetLength(0); b++)
+                    {
+                        tablica01[a, b] = wiersz[0, b];
+                    }
+                    nadpisano = true;
+                    break;
+                }
+            }
+            
+            if(nadpisano == false)
+            {
+                return Polacz_tablice_2d(tablica01, wiersz, separator0);
+            }
+            else
+            {
+                return tablica01;
+            }
+        }
     }
 }
