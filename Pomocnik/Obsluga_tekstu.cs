@@ -185,9 +185,9 @@ namespace Pomocnik
         {
             bool nadpisano = false;
             bool[] tab_nadpis = new bool[klucze_kolumny0.GetLength(0)];
-            for(int a = 0; a < tablica01.GetLength(0); a++)
+            for(int a = 0; a < tablica01.GetLength(0) -1; a++)
             {
-                for(int b = 0; b < klucze_kolumny0.GetLength(0); b++)
+                for(int b = 0; b < klucze_kolumny0.GetLength(0) -1; b++)
                 {
                     if(tablica01[a, klucze_kolumny0[b]] == wiersz[0, klucze_kolumny0[b]])
                     {
@@ -196,7 +196,7 @@ namespace Pomocnik
                 }
                 if(tab_nadpis.All(x => x))
                 {
-                    for (int b = 0; b < tablica01.GetLength(0); b++)
+                    for (int b = 0; b < tablica01.GetLength(0) -1; b++)
                     {
                         tablica01[a, b] = wiersz[0, b];
                     }

@@ -1,4 +1,7 @@
-﻿1.5.0.0 (09.02.2018r.)
+﻿1.5.0.1 (14.03.2018r.)
+-Drobne zmiany
+
+1.5.0.0 (09.02.2018r.)
 -Dodano funkcje:
 	a. Obsluga_tekstu->Polacz_tablice_2d
 	b. Obsluga_tekstu->Wyodrebnij_wiersz_z_tablicy_2d
