@@ -214,5 +214,16 @@ namespace Pomocnik
                 return tablica01;
             }
         }
+
+        public static decimal[] Zamien_tablice_string_na_decimal(string[] lista)
+        {
+            decimal[] zwrot = new decimal[lista.GetLength(0)];
+
+            for(int a = 0; a < lista.GetLength(0); a++)
+            {
+                zwrot[a] = decimal.Parse(lista[a].Replace('.',','));
+            }
+            return zwrot;
+        }
     }
 }

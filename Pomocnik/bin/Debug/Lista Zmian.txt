@@ -1,4 +1,12 @@
-﻿1.5.1.0 (05.04.2019r.)
+﻿1.5.2.0 (05.04.2019r.)
+-Dodano funkcje:
+	a. Obsluga_tekstu->Zamien_tablice_string_na_decimal
+-Drobne zmiany
+
+1.5.1.1 (05.04.2019r.)
+-Drobne zmiany
+
+1.5.1.0 (05.04.2019r.)
 -Dodano funkcje:
 	a. Obsluga_plikow->Wczytaj_wszystkie_pliki_tekstowe
 

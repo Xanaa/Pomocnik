@@ -26,19 +26,17 @@ namespace Pomocnik
         public static string[,] Wczytaj_wszystkie_pliki_tekstowe(string sciezka, int ile_kolumn, string Komentarz_pomijany, string separator)
         {
             string[] lista = Podaj_liste_plikow_ze_sciezka(sciezka);
-            string[] Wczytane_pliki = new string[Podaj_dlugosc_plikow_w_folderze(lista) + (2 * lista.GetLength(0))];
+            string[] Wczytane_pliki = new string[Podaj_dlugosc_plikow_w_folderze(lista)];
             int a = 0;
             foreach (string linia in lista)
             {
                 string[] temp1 = File.ReadAllLines(linia);
-                Wczytane_pliki[a] = Obsluga_tekstu.Znajdz_i_zamien(linia, sciezka + "\\", "");
-                a++;
+
                 for (int x = 0; x < temp1.GetLength(0); x++)
                 {
                     Wczytane_pliki[a] = temp1[x];
                     a++;
                 }
-                a++;
             }
 
             string[] Kolumnowo0 = Sprawdz_komentarze(Wczytane_pliki, Komentarz_pomijany);
@@ -128,7 +126,7 @@ namespace Pomocnik
         }
 
         // Podaj ile maja wszystkie pliki razem
-        private static int Podaj_dlugosc_plikow_w_folderze(string[] lista_plikow0)
+        public static int Podaj_dlugosc_plikow_w_folderze(string[] lista_plikow0)
         {
             int dlugosc = 0;
             foreach(string linka in lista_plikow0)
