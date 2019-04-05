@@ -22,6 +22,31 @@ namespace Pomocnik
             }
         }
 
+        // Wczytaj wszystkie pliki w folderze jako tablica 2d
+        public static string[,] Wczytaj_wszystkie_pliki_tekstowe(string sciezka, int ile_kolumn, string Komentarz_pomijany, string separator)
+        {
+            string[] lista = Podaj_liste_plikow_ze_sciezka(sciezka);
+            string[] Wczytane_pliki = new string[Podaj_dlugosc_plikow_w_folderze(lista) + (2 * lista.GetLength(0))];
+            int a = 0;
+            foreach (string linia in lista)
+            {
+                string[] temp1 = File.ReadAllLines(linia);
+                Wczytane_pliki[a] = Obsluga_tekstu.Znajdz_i_zamien(linia, sciezka + "\\", "");
+                a++;
+                for (int x = 0; x < temp1.GetLength(0); x++)
+                {
+                    Wczytane_pliki[a] = temp1[x];
+                    a++;
+                }
+                a++;
+            }
+
+            string[] Kolumnowo0 = Sprawdz_komentarze(Wczytane_pliki, Komentarz_pomijany);
+            string[,] Kolumnowo = Podziel_na_kolumny(Kolumnowo0, ile_kolumn, separator);
+            return Kolumnowo;
+        }
+
+
         // Usuń komentarze (zaczyna się od "komentarz")
         public static string[] Sprawdz_komentarze(string[] plik, string komentarz)
         {
